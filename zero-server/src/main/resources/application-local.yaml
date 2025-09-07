@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  cache:
+    type: redis  # 配置缓存内容，因为 spring-cache，有很多缓存管理
+  data:
+    redis:
+      host: 127.0.0.1 # 地址
+      port: 6379 # 端口
+      database: 0 # 数据库索引
+      jedis:
+        pool:
+          max-wait: -1ms # 连接池最大阻塞等待时间，单位：毫秒。默认为 -1 ，表示不限制
+          min-idle: 0 # 默认连接池最小空闲的连接数，默认为 0 。允许设置 0 和 正数
+          max-idle: 8 # 默认连接数最大空闲的连接数，默认为 8 。使用负数表示没有限制
+          max-active: 8 # 连接池最大连接数，默认为 8 。使用负数表示没有限制

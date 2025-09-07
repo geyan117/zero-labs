@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: zero-server
+  profiles:
+    active: local

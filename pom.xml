@@ -20,6 +20,7 @@
 
     <modules>
         <module>zero-server</module>
+        <module>zero-infra</module>
     </modules>
 
     <properties>
