@@ -2,6 +2,11 @@ server:
   port: 8080
 
 spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/zero-labs?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+    username: root
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
   cache:
     type: redis  # 配置缓存内容，因为 spring-cache，有很多缓存管理
   data:
@@ -15,3 +20,15 @@ spring:
           min-idle: 0 # 默认连接池最小空闲的连接数，默认为 0 。允许设置 0 和 正数
           max-idle: 8 # 默认连接数最大空闲的连接数，默认为 8 。使用负数表示没有限制
           max-active: 8 # 连接池最大连接数，默认为 8 。使用负数表示没有限制
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto  # Id主键自增
+      logic-delete-value: 1  # 逻辑已删除值
+      logic-not-delete-value: 0  # 逻辑未删除值
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.mars.zero.server.entity

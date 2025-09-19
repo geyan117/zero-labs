@@ -16,5 +16,6 @@
 
     <modules>
         <module>zero-redis</module>
+        <module>zero-mybatis</module>
     </modules>
 </project>
